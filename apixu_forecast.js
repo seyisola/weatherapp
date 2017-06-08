@@ -40,7 +40,7 @@
 
                   Use the following code as an example:  
                                  
-                     url: 'https://api.apixu.com/v1/forecast.json?key=ADD_YOUR_API_KEY_HERE',
+                     url: 'https://api.apixu.com/v1/forecast.json?key=a666a3131d3c428d83f210527170806',
                      
 
         
@@ -83,21 +83,37 @@
 
         $(document).ready(function(){
            $(':button').click(function(){
-                var message = 'q=' + $('#searchValue').val()+'&days=3';   
+                var message = 'q=' + $('#searchValue').val()+'&days=10';   
                 $.ajax({
                       type: 'GET',
-                      url: 'https://api.apixu.com/v1/forecast.json?key=ADD_YOUR_API_KEY_HERE',
+                      url: 'https://api.apixu.com/v1/forecast.json?key=a666a3131d3c428d83f210527170806',
                       data: message             
                 })
                 .done(function(json){
                      $('#Location').html("<center>" + json.location.name + "</center>");
                      $('#Region').html("<center>" + json.location.region + "</center>");
-                     $('#CurTemp').html("<center>" + json.current.temp_f + "</center>");
-                     $('#FeelsLike').html("<center>" + json.current.feelslike_f + "</center>");
-                     $('#Day1Low').html("<center>" + json.forecast.forecastday[0].day.mintemp_f + "</center>");
-                     $('#Day1High').html("<center>" + json.forecast.forecastday[0].day.maxtemp_f + "</center>");
-                     $('#Day2Low').html("<center>" + json.forecast.forecastday[1].day.mintemp_f + "</center>");
-                     $('#Day2High').html("<center>" + json.forecast.forecastday[1].day.maxtemp_f + "</center>");        
+                     $('#CurTemp').html("<center>" + json.current.temp_c + "</center>");
+                     $('#FeelsLike').html("<center>" + json.current.feelslike_c + "</center>");
+                     $('#Day1Low').html("<center>" + json.forecast.forecastday[0].day.mintemp_c + "</center>");
+                     $('#Day1High').html("<center>" + json.forecast.forecastday[0].day.maxtemp_c + "</center>");
+                     $('#Day2Low').html("<center>" + json.forecast.forecastday[1].day.mintemp_c + "</center>");
+                     $('#Day2High').html("<center>" + json.forecast.forecastday[1].day.maxtemp_c + "</center>");
+                     $('#Day3Low').html("<center>" + json.forecast.forecastday[2].day.mintemp_c + "</center>");
+                     $('#Day3High').html("<center>" + json.forecast.forecastday[2].day.maxtemp_c + "</center>");
+                     $('#Day4Low').html("<center>" + json.forecast.forecastday[0].day.mintemp_c + "</center>");
+                     $('#Day4High').html("<center>" + json.forecast.forecastday[0].day.maxtemp_c + "</center>");
+                     $('#Day5Low').html("<center>" + json.forecast.forecastday[0].day.mintemp_c + "</center>");
+                     $('#Day5High').html("<center>" + json.forecast.forecastday[0].day.maxtemp_c + "</center>");
+                     $('#Day6Low').html("<center>" + json.forecast.forecastday[0].day.mintemp_c + "</center>");
+                     $('#Day6High').html("<center>" + json.forecast.forecastday[0].day.maxtemp_c + "</center>");
+                     $('#Day7Low').html("<center>" + json.forecast.forecastday[0].day.mintemp_c + "</center>");
+                     $('#Day7High').html("<center>" + json.forecast.forecastday[0].day.maxtemp_c + "</center>");
+                     $('#Day8Low').html("<center>" + json.forecast.forecastday[0].day.mintemp_c + "</center>");
+                     $('#Day8High').html("<center>" + json.forecast.forecastday[0].day.maxtemp_c + "</center>");
+                     $('#Day9Low').html("<center>" + json.forecast.forecastday[0].day.mintemp_c + "</center>");
+                     $('#Day9High').html("<center>" + json.forecast.forecastday[0].day.maxtemp_c + "</center>");
+                     $('#Day10Low').html("<center>" + json.forecast.forecastday[0].day.mintemp_c + "</center>");
+                     $('#Day10High').html("<center>" + json.forecast.forecastday[0].day.maxtemp_c + "</center>");
 
                      
                 })
